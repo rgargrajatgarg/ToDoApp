@@ -67,8 +67,10 @@ const App = () => {
     };
 
     const deleteTodo = (id) => {
-        window.confirm("Confirm to delete this task");
-        const filteredTodo = allTodos.filter((todo) => todo.id !== id);
+        var filteredTodo = allTodos;
+        if(window.confirm("Confirm to delete this task")){
+            filteredTodo = allTodos.filter((todo) => todo.id !== id);
+        }
         setAllTodos(filteredTodo);
     };
 
